@@ -1,6 +1,20 @@
+
+
 extends layout
 
 block content
   h1= title
-  p wecome to my repo
-  button(type="button", class="btn btn-secondary") Press ME
+  p Welcome to my repo
+  button(type="button", class="btn btn-secondary", onclick="goFaster()") Press ME
+  div#faster Increase the speed
+
+script.
+  var mph = 20;
+  var change = 1;
+
+  function goFaster() {
+    mph += change;
+    change += 1;
+    var fasterDiv = document.getElementById("faster");
+    fasterDiv.innerText = "MPH " + mph + " with change " + change;
+  }
